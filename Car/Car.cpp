@@ -43,6 +43,16 @@ public:
 		Car car(name, graduationYear, engineCapacity, price);
 		cars.push_back(car);
 	}
+	void DeleteCar2000()
+	{
+		for (vector<Car>::iterator it = cars.begin(); it != cars.end(); it++)
+		{
+			if (it->GetGraduationYear() <= 2000)
+			{
+				it = cars.erase(it);
+			}
+		}
+	}
 	void Show()
 	{
 		for (vector<Car>::iterator it = cars.begin(); it != cars.end(); it++)
@@ -61,7 +71,14 @@ int main()
 	carDealership car;
 
 	car.AddCar("car", 2005, 3.5, 1000);
-	car.AddCar("car2", 2007, 3.0, 5000);
+	car.AddCar("car2", 1998, 3.0, 5000);
+	car.AddCar("car3", 2007, 3.0, 5000);
+
+	car.Show();
+
+	car.DeleteCar2000();
+
+	car.Show();
 
 	return 0;
 };
