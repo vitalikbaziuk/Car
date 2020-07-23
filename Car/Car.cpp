@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <algorithm>
 using namespace std;
 
 class Car
@@ -63,6 +63,42 @@ public:
 			cout << it->GetPrice() << endl;
 			cout << endl;
 		}
+	}
+	void SortByName()
+	{
+		sort(cars.begin(), cars.end(),
+			[](Car& left, Car& right)-> bool
+			{
+				return left.GetName() < right.GetName();
+			}
+		);
+	}
+	void SortByGraduationYear()
+	{
+		sort(cars.begin(), cars.end(),
+			[](Car& left, Car& right)-> bool
+			{
+				return left.GetGraduationYear() < right.GetGraduationYear();
+			}
+		);
+	}
+	void SortByEngineCapacity()
+	{
+		sort(cars.begin(), cars.end(),
+			[](Car& left, Car& right)-> bool
+			{
+				return left.GetEngineCapacity() < right.GetEngineCapacity();
+			}
+		);
+	}
+	void SortByPrice()
+	{
+		sort(cars.begin(), cars.end(),
+			[](Car& left, Car& right)-> bool
+			{
+				return left.GetPrice() < right.GetPrice();
+			}
+		);
 	}
 };
 
