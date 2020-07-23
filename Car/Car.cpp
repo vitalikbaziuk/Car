@@ -198,6 +198,18 @@ public:
 			}
 		}
 	}
+
+	void IsPriceMore100000()
+	{
+		if (any_of(cars.cbegin(), cars.cend(), [](Car it) { return it.GetPrice() >= 100000; }))
+		{
+			cout << "True";
+		}
+		else
+		{
+			cout << "False";
+		}
+	}
 };
 
 int main()
