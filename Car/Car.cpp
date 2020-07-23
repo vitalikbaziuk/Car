@@ -100,6 +100,63 @@ public:
 			}
 		);
 	}
+
+	void SearchByName(string name)
+	{
+		for (vector <Car>::iterator it = cars.begin(); it != cars.end(); it++)
+		{
+			if ((*it).GetName() == name)
+			{
+				cout << "Car name: " << (*it).GetName() << endl;
+				cout << "Car graduation year: " << (*it).GetGraduationYear() << endl;
+				cout << "Car engine capacity: " << (*it).GetEngineCapacity() << endl;
+				cout << "Car price: " << (*it).GetPrice() << endl;
+				cout << endl;
+			}
+		}
+	}
+	void SearchByGraduationYear(int graduationYear)
+	{
+		for (vector <Car>::iterator it = cars.begin(); it != cars.end(); it++)
+		{
+			if ((*it).GetGraduationYear() == graduationYear)
+			{
+				cout << "Car name: " << (*it).GetName() << endl;
+				cout << "Car graduation year: " << (*it).GetGraduationYear() << endl;
+				cout << "Car engine capacity: " << (*it).GetEngineCapacity() << endl;
+				cout << "Car price: " << (*it).GetPrice() << endl;
+				cout << endl;
+			}
+		}
+	}
+	void SearchByEngineCapacity(float engineCapacity)
+	{
+		for (vector <Car>::iterator it = cars.begin(); it != cars.end(); it++)
+		{
+			if ((*it).GetEngineCapacity() == engineCapacity)
+			{
+				cout << "Car name: " << (*it).GetName() << endl;
+				cout << "Car graduation year: " << (*it).GetGraduationYear() << endl;
+				cout << "Car engine capacity: " << (*it).GetEngineCapacity() << endl;
+				cout << "Car price: " << (*it).GetPrice() << endl;
+				cout << endl;
+			}
+		}
+	}
+	void SearchByPrice(int price)
+	{
+		for (vector <Car>::iterator it = cars.begin(); it != cars.end(); it++)
+		{
+			if ((*it).GetPrice() == price)
+			{
+				cout << "Car name: " << (*it).GetName() << endl;
+				cout << "Car graduation year: " << (*it).GetGraduationYear() << endl;
+				cout << "Car engine capacity: " << (*it).GetEngineCapacity() << endl;
+				cout << "Car price: " << (*it).GetPrice() << endl;
+				cout << endl;
+			}
+		}
+	}
 };
 
 int main()
