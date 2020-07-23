@@ -31,6 +31,11 @@ public:
 	{
 		return price;
 	}
+
+	void SetPrice(int price)
+	{
+		this->price = price;
+	}
 };
 
 class carDealership
@@ -158,7 +163,7 @@ public:
 		}
 	}
 
-	int countCarEURO5() {
+	int CountCarEURO5() {
 		int count = 0;
 		for (vector <Car>::iterator it = cars.begin(); it != cars.end(); it++)
 		{
@@ -169,7 +174,7 @@ public:
 		}
 		return count;
 	}
-	int countCarsLessThan5Years() {
+	int CountCarsLessThan5Years() {
 		int count = 0;
 		for (vector <Car>::iterator it = cars.begin(); it != cars.end(); it++)
 		{
@@ -180,6 +185,19 @@ public:
 		}
 		return count;
 	}
+
+	void ReducePriceBy20()
+	{
+		for (vector <Car>::iterator it = cars.begin(); it != cars.end(); it++)
+		{
+			if (2020 - (*it).GetGraduationYear() >= 15)
+			{
+				int price = (*it).GetPrice();
+				price -= price * 20 / 100;
+				(*it).SetPrice(price);
+			}
+		}
+	}
 };
 
 int main()
@@ -188,14 +206,12 @@ int main()
 
 	car.AddCar("car", 2005, 3.5, 1000);
 	car.AddCar("car2", 1998, 3.0, 5000);
-	car.AddCar("car3", 2014, 3.0, 5000);
-	car.AddCar("car4", 2018, 3.0, 5000);
-	car.AddCar("car5", 2017, 3.0, 5000);
-
 	car.Show();
 
-	int a = car.countCarsLessThan5Years();
-	cout << a << endl;
+	car.ReducePriceBy20();
+	
+	car.Show();
+
 
 	return 0;
 };
