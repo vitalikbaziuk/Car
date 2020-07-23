@@ -157,6 +157,18 @@ public:
 			}
 		}
 	}
+
+	int countCarEURO5() {
+		int count = 0;
+		for (vector <Car>::iterator it = cars.begin(); it != cars.end(); it++)
+		{
+			if ((*it).GetGraduationYear() >= 2009)
+			{
+				count++;
+			}
+		}
+		return count;
+	}
 };
 
 int main()
@@ -165,13 +177,14 @@ int main()
 
 	car.AddCar("car", 2005, 3.5, 1000);
 	car.AddCar("car2", 1998, 3.0, 5000);
-	car.AddCar("car3", 2007, 3.0, 5000);
+	car.AddCar("car3", 2014, 3.0, 5000);
+	car.AddCar("car4", 2013, 3.0, 5000);
+	car.AddCar("car5", 2012, 3.0, 5000);
 
 	car.Show();
 
-	car.DeleteCar2000();
-
-	car.Show();
+	int a = car.countCarEURO5();
+	cout << a << endl;
 
 	return 0;
 };
