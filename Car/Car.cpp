@@ -210,19 +210,33 @@ public:
 			cout << "False";
 		}
 	}
+
+	void IsNoCars()
+	{
+		if (none_of(cars.cbegin(), cars.cend(), [](Car it) { return it.GetEngineCapacity() < 1.0; }))
+		{
+			cout << "True";
+		}
+		else
+		{
+			cout << "False";
+		}
+	}
+
 };
 
 int main()
 {
 	carDealership car;
 
+	car.AddCar("car2", 1998, 3.9, 5000);
 	car.AddCar("car", 2005, 3.5, 1000);
 	car.AddCar("car2", 1998, 3.0, 5000);
-	car.Show();
+	//car.Show();
 
-	car.ReducePriceBy20();
+	car.IsNoCars();
 	
-	car.Show();
+	//car.Show();
 
 
 	return 0;
